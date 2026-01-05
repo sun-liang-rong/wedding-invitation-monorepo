@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "id": "forest",
+    "name": "清新森系",
+    "description": "绿色自然系设计，清新如沐春风，适合户外草坪婚礼",
+    "thumbnail": "/templates/forest-thumb.jpg",
+    "category": "nature",
+    "style": "artistic",
+    "tags": ["森系", "自然", "清新", "户外"]
+  },
+  "theme": {
+    "colors": {
+      "primary": "#059669",
+      "secondary": "#34d399",
+      "accent": "#10b981",
+      "background": "#f0fdf4",
+      "text": "#1f2937",
+      "textMuted": "#6b7280"
+    },
+    "fonts": {
+      "primary": "system-ui, sans-serif",
+      "heading": "Georgia, serif",
+      "body": "system-ui, sans-serif"
+    },
+    "borderRadius": {
+      "small": "4px",
+      "medium": "16px",
+      "large": "32px",
+      "full": "9999px"
+    },
+    "shadows": {
+      "small": "0 1px 2px rgba(0,0,0,0.05)",
+      "medium": "0 8px 24px rgba(5,150,105,0.12)",
+      "large": "0 16px 40px rgba(5,150,105,0.15)"
+    },
+    "spacing": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "40px"
+    }
+  },
+  "sections": [
+    {
+      "id": "cover",
+      "type": "cover",
+      "props": {
+        "groomName": "{{couple.groom.name}}",
+        "brideName": "{{couple.bride.name}}",
+        "date": "{{wedding.date}}",
+        "time": "{{wedding.time}}",
+        "mainEmoji": "🌿",
+        "showTime": true
+      },
+      "style": {
+        "background": "linear-gradient(135deg, #059669 0%, #34d399 100%)"
+      }
+    },
+    {
+      "id": "intro",
+      "type": "header",
+      "props": {
+        "emoji": "🌸",
+        "subtitle": "A WEDDING INVITATION",
+        "title": "执子之手",
+        "showDivider": true
+      }
+    },
+    {
+      "id": "couple",
+      "type": "couple",
+      "props": {
+        "groomName": "{{couple.groom.name}}",
+        "groomBio": "{{couple.groom.bio}}",
+        "groomIntro": "{{couple.groom.intro}}",
+        "brideName": "{{couple.bride.name}}",
+        "brideBio": "{{couple.bride.bio}}",
+        "brideIntro": "{{couple.bride.intro}}",
+        "layout": "horizontal",
+        "coupleEmoji": "🌿"
+      }
+    },
+    {
+      "id": "wedding-info",
+      "type": "weddingInfo",
+      "props": {
+        "date": "{{wedding.date}}",
+        "time": "{{wedding.time}}",
+        "venue": "{{wedding.venue}}",
+        "address": "{{wedding.address}}",
+        "calendarEmoji": "🌻",
+        "locationEmoji": "🌳"
+      }
+    },
+    {
+      "id": "gallery-title",
+      "type": "header",
+      "props": {
+        "subtitle": "MOMENTS",
+        "title": "我们的时光",
+        "showDivider": true
+      }
+    },
+    {
+      "id": "gallery",
+      "type": "gallery",
+      "props": {
+        "layout": "grid",
+        "columns": 3,
+        "showCaptions": false,
+        "placeholderEmoji": "🌸"
+      }
+    },
+    {
+      "id": "blessing",
+      "type": "blessing",
+      "props": {
+        "text": "{{blessing.text}}",
+        "decorationEmojis": ["🌿", "🌸", "🌿"]
+      }
+    },
+    {
+      "id": "guestbook",
+      "type": "guestbook",
+      "props": {
+        "title": "留下祝福",
+        "subtitle": "BEST WISHES",
+        "placeholderName": "您的名字",
+        "placeholderMessage": "写下您的祝福...",
+        "submitText": "💚 送上祝福"
+      }
+    }
+  ]
+}

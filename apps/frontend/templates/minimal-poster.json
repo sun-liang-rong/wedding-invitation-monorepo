@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "id": "minimal-poster",
+    "name": "极简海报",
+    "description": "简约大气设计，黑白金配色，适合高端酒店婚礼",
+    "thumbnail": "/templates/minimal-poster-thumb.jpg",
+    "category": "elegant",
+    "style": "modern",
+    "tags": ["简约", "高端", "黑白金", "现代"]
+  },
+  "theme": {
+    "colors": {
+      "primary": "#1c1917",
+      "secondary": "#d4af37",
+      "accent": "#78716c",
+      "background": "#ffffff",
+      "text": "#1c1917",
+      "textMuted": "#78716c"
+    },
+    "fonts": {
+      "primary": "system-ui, sans-serif",
+      "heading": "'Times New Roman', serif",
+      "body": "system-ui, sans-serif"
+    },
+    "borderRadius": {
+      "small": "0px",
+      "medium": "4px",
+      "large": "8px",
+      "full": "9999px"
+    },
+    "shadows": {
+      "small": "0 1px 3px rgba(0,0,0,0.1)",
+      "medium": "0 4px 12px rgba(0,0,0,0.1)",
+      "large": "0 8px 24px rgba(0,0,0,0.12)"
+    },
+    "spacing": {
+      "xs": "2px",
+      "sm": "8px",
+      "md": "24px",
+      "lg": "48px",
+      "xl": "64px"
+    }
+  },
+  "sections": [
+    {
+      "id": "cover",
+      "type": "cover",
+      "props": {
+        "groomName": "{{couple.groom.name}}",
+        "brideName": "{{couple.bride.name}}",
+        "date": "{{wedding.date}}",
+        "time": "{{wedding.time}}",
+        "mainEmoji": "✨",
+        "showTime": false
+      },
+      "style": {
+        "background": "#1c1917"
+      }
+    },
+    {
+      "id": "logo",
+      "type": "header",
+      "props": {
+        "title": "WEDDING",
+        "subtitle": "SAVE THE DATE",
+        "showDivider": false
+      },
+      "style": {
+        "padding": "48px 24px",
+        "background": "#1c1917",
+        "color": "#d4af37"
+      }
+    },
+    {
+      "id": "names",
+      "type": "couple",
+      "props": {
+        "groomName": "{{couple.groom.name}}",
+        "groomBio": "",
+        "brideName": "{{couple.bride.name}}",
+        "brideBio": "",
+        "layout": "vertical",
+        "showBoth": true,
+        "coupleEmoji": "💍"
+      },
+      "style": {
+        "padding": "48px 24px",
+        "background": "#1c1917",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "id": "divider",
+      "type": "divider",
+      "props": {
+        "color": "#d4af37",
+        "width": "80px",
+        "height": "1px"
+      },
+      "style": {
+        "background": "#1c1917",
+        "padding": "0"
+      }
+    },
+    {
+      "id": "wedding-info",
+      "type": "weddingInfo",
+      "props": {
+        "date": "{{wedding.date}}",
+        "time": "{{wedding.time}}",
+        "venue": "{{wedding.venue}}",
+        "address": "{{wedding.address}}",
+        "calendarEmoji": "○",
+        "locationEmoji": "◎"
+      },
+      "style": {
+        "padding": "48px 24px",
+        "background": "#1c1917",
+        "color": "#ffffff"
+      }
+    },
+    {
+      "id": "gallery",
+      "type": "gallery",
+      "props": {
+        "layout": "grid",
+        "columns": 2,
+        "showCaptions": false
+      },
+      "style": {
+        "background": "#ffffff",
+        "padding": "32px 16px"
+      }
+    },
+    {
+      "id": "blessing",
+      "type": "blessing",
+      "props": {
+        "text": "{{blessing.text}}",
+        "showDecorations": false
+      },
+      "style": {
+        "padding": "48px 24px",
+        "background": "#1c1917",
+        "color": "#d4af37"
+      }
+    }
+  ]
+}

@@ -2,7 +2,12 @@
 /dist
 /node_modules
 /build
-
+# 所有目录下的node_modules
+**/node_modules/
+# 所有目录下的dist
+**/dist/
+# 所有目录下的.next
+**/.next/
 # Logs
 logs
 *.log

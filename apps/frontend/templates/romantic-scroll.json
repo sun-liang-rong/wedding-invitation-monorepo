@@ -1,0 +1,137 @@
+{
+  "meta": {
+    "id": "romantic-scroll",
+    "name": "浪漫长图",
+    "description": "经典竖向长图布局，浪漫唯美，适合传统婚礼",
+    "thumbnail": "/templates/romantic-scroll-thumb.jpg",
+    "category": "romantic",
+    "style": "traditional",
+    "tags": ["浪漫", "经典", "唯美", "传统"]
+  },
+  "theme": {
+    "colors": {
+      "primary": "#e11d48",
+      "secondary": "#fb7185",
+      "accent": "#f43f5e",
+      "background": "#fef2f2",
+      "text": "#1f2937",
+      "textMuted": "#6b7280"
+    },
+    "fonts": {
+      "primary": "system-ui, sans-serif",
+      "heading": "Georgia, serif",
+      "body": "system-ui, sans-serif"
+    },
+    "borderRadius": {
+      "small": "4px",
+      "medium": "12px",
+      "large": "24px",
+      "full": "9999px"
+    },
+    "shadows": {
+      "small": "0 1px 2px rgba(0,0,0,0.05)",
+      "medium": "0 10px 30px rgba(225,29,72,0.15)",
+      "large": "0 20px 40px rgba(225,29,72,0.2)"
+    },
+    "spacing": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "32px",
+      "xl": "48px"
+    }
+  },
+  "sections": [
+    {
+      "id": "cover",
+      "type": "cover",
+      "props": {
+        "groomName": "{{couple.groom.name}}",
+        "brideName": "{{couple.bride.name}}",
+        "date": "{{wedding.date}}",
+        "time": "{{wedding.time}}",
+        "mainEmoji": "💕",
+        "showTime": true
+      }
+    },
+    {
+      "id": "intro-title",
+      "type": "header",
+      "props": {
+        "subtitle": "THE WEDDING OF",
+        "title": "{{couple.groom.name}} & {{couple.bride.name}}",
+        "showDivider": true
+      }
+    },
+    {
+      "id": "couple-story",
+      "type": "couple",
+      "props": {
+        "groomName": "{{couple.groom.name}}",
+        "groomBio": "{{couple.groom.bio}}",
+        "groomIntro": "{{couple.groom.intro}}",
+        "brideName": "{{couple.bride.name}}",
+        "brideBio": "{{couple.bride.bio}}",
+        "brideIntro": "{{couple.bride.intro}}",
+        "layout": "horizontal",
+        "coupleEmoji": "💑"
+      }
+    },
+    {
+      "id": "wedding-info",
+      "type": "weddingInfo",
+      "props": {
+        "date": "{{wedding.date}}",
+        "time": "{{wedding.time}}",
+        "venue": "{{wedding.venue}}",
+        "address": "{{wedding.address}}",
+        "calendarEmoji": "📅",
+        "locationEmoji": "📍"
+      }
+    },
+    {
+      "id": "gallery-title",
+      "type": "header",
+      "props": {
+        "subtitle": "OUR GALLERY",
+        "title": "幸福时光",
+        "showDivider": true
+      }
+    },
+    {
+      "id": "gallery",
+      "type": "gallery",
+      "props": {
+        "layout": "grid",
+        "columns": 2,
+        "showCaptions": false,
+        "placeholderEmoji": "📷"
+      }
+    },
+    {
+      "id": "blessing-title",
+      "type": "header",
+      "props": {
+        "subtitle": "BLESSINGS",
+        "title": "婚礼祝福",
+        "showDivider": true
+      }
+    },
+    {
+      "id": "blessing",
+      "type": "blessing",
+      "props": {
+        "text": "{{blessing.text}}",
+        "author": "{{blessing.author}}"
+      }
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "props": {
+        "text": "感谢您的祝福",
+        "emoji": "💕"
+      }
+    }
+  ]
+}

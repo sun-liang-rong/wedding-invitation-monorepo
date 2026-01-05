@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "id": "romantic-you",
+    "name": "浪漫与你",
+    "description": "蓝色海洋系设计，清新浪漫，奔赴一场浪漫",
+    "author": "Wedding Invitation Team",
+    "version": "1.0.0",
+    "thumbnail": "/templates/romantic-you-thumbnail.jpg",
+    "tags": ["浪漫", "海洋", "清新", "户外"],
+    "category": "romantic",
+    "style": "modern",
+    "supportedOrientations": ["portrait"],
+    "estimatedTime": "5分钟"
+  },
+  "theme": {
+    "colors": {
+      "primary": "#0ea5e9",
+      "secondary": "#38bdf8",
+      "accent": "#0284c7",
+      "background": "#f0f9ff",
+      "text": "#1e293b",
+      "textMuted": "#64748b"
+    },
+    "fonts": {
+      "primary": "system-ui, -apple-system, sans-serif",
+      "heading": "Georgia, 'Times New Roman', serif",
+      "body": "system-ui, -apple-system, sans-serif"
+    },
+    "borderRadius": {
+      "small": "4px",
+      "medium": "12px",
+      "large": "24px",
+      "full": "9999px"
+    },
+    "shadows": {
+      "small": "0 1px 2px rgba(0,0,0,0.05)",
+      "medium": "0 10px 30px rgba(14, 165, 233, 0.15)",
+      "large": "0 20px 40px rgba(14, 165, 233, 0.2)"
+    },
+    "spacing": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "32px",
+      "xl": "48px"
+    }
+  },
+  "page": {
+    "layout": "single-column",
+    "maxWidth": "480px",
+    "mobileBreakpoint": "768px",
+    "enableResponsive": true
+  },
+  "sections": [
+    {
+      "id": "cover",
+      "type": "cover",
+      "style": {
+        "minHeight": "100vh",
+        "display": "flex",
+        "flexDirection": "column",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "padding": "40px 20px"
+      },
+      "props": {
+        "groomName": "{{data.couple.groom.name}}",
+        "brideName": "{{data.couple.bride.name}}",
+        "date": "{{data.event.primary.date}}",
+        "time": "{{data.event.primary.time}}",
+        "backgroundImage": "{{data.cover.image}}",
+        "showTime": true,
+        "mainEmoji": "🌊",
+        "dateLabel": "婚礼日期"
+      }
+    },
+    {
+      "id": "couple-intro",
+      "type": "header",
+      "style": {
+        "padding": "40px 20px",
+        "textAlign": "center"
+      },
+      "props": {
+        "emoji": "💑",
+        "subtitle": "THE COUPLE",
+        "title": "新郎新娘",
+        "showDivider": true,
+        "dividerColor": "#0ea5e9"
+      }
+    },
+    {
+      "id": "couple",
+      "type": "couple",
+      "style": {
+        "padding": "0 20px 40px",
+        "background": "transparent"
+      },
+      "props": {
+        "groomName": "{{data.couple.groom.name}}",
+        "groomAvatar": "{{data.couple.groom.avatar}}",
+        "groomBio": "{{data.couple.groom.bio}}",
+        "groomIntro": "温柔体贴，才华横溢\n遇见你，是我最美丽的意外\n余生请多指教",
+        "brideName": "{{data.couple.bride.name}}",
+        "brideAvatar": "{{data.couple.bride.avatar}}",
+        "brideBio": "{{data.couple.bride.bio}}",
+        "brideIntro": "美丽大方，善良可爱\n从此以后，我的故事都是你\n执子之手，与子偕老",
+        "layout": "horizontal",
+        "showBoth": true,
+        "coupleEmoji": "💕"
+      }
+    },
+    {
+      "id": "event-header",
+      "type": "header",
+      "style": {
+        "padding": "40px 20px 20px",
+        "textAlign": "center"
+      },
+      "props": {
+        "subtitle": "WEDDING DETAILS",
+        "title": "婚礼详情",
+        "showDivider": true,
+        "dividerColor": "#0ea5e9"
+      }
+    },
+    {
+      "id": "event",
+      "type": "event",
+      "style": {
+        "padding": "0 20px 40px",
+        "background": "linear-gradient(180deg, transparent 0%, #f0f9ff 100%)"
+      },
+      "props": {
+        "date": "{{data.event.primary.date}}",
+        "time": "{{data.event.primary.time}}",
+        "venue": "{{data.event.primary.venue}}",
+        "address": "{{data.event.primary.address}}",
+        "showTime": true,
+        "showAddress": true,
+        "calendarEmoji": "📅",
+        "locationEmoji": "📍",
+        "mapButtonText": "📍 查看地图"
+      }
+    },
+    {
+      "id": "gallery-header",
+      "type": "header",
+      "style": {
+        "padding": "40px 20px 20px",
+        "textAlign": "center"
+      },
+      "props": {
+        "subtitle": "PHOTO GALLERY",
+        "title": "幸福相册",
+        "showDivider": true,
+        "dividerColor": "#0ea5e9"
+      }
+    },
+    {
+      "id": "gallery",
+      "type": "gallery",
+      "style": {
+        "padding": "0 0 40px",
+        "background": "transparent"
+      },
+      "props": {
+        "images": "{{data.gallery.images}}",
+        "layout": "grid",
+        "columns": 3,
+        "showCaptions": false,
+        "placeholderEmoji": "📷"
+      }
+    },
+    {
+      "id": "blessing-header",
+      "type": "header",
+      "style": {
+        "padding": "40px 20px 20px",
+        "textAlign": "center"
+      },
+      "props": {
+        "subtitle": "BLESSINGS",
+        "title": "送祝福",
+        "showDivider": true,
+        "dividerColor": "#0ea5e9"
+      }
+    },
+    {
+      "id": "guestbook",
+      "type": "guestbook",
+      "style": {
+        "padding": "0 20px 60px",
+        "background": "linear-gradient(180deg, transparent 0%, #f0f9ff 100%)"
+      },
+      "props": {
+        "entries": "{{data.guestbook.entries}}",
+        "title": "送祝福",
+        "subtitle": "BLESSINGS",
+        "placeholderName": "您的姓名",
+        "placeholderMessage": "请输入您的祝福语...",
+        "submitText": "💕 送上祝福",
+        "emptyText": "暂无祝福，快来抢沙发！"
+      }
+    },
+    {
+      "id": "blessing",
+      "type": "blessing",
+      "style": {
+        "padding": "0 20px 60px",
+        "background": "transparent"
+      },
+      "props": {
+        "text": "{{data.blessing.text}}",
+        "author": "{{data.blessing.author}}",
+        "showDecorations": true,
+        "decorationEmojis": ["💕", "🎉", "💕"]
+      }
+    },
+    {
+      "id": "footer",
+      "type": "custom",
+      "style": {
+        "padding": "40px 20px",
+        "background": "#1e293b",
+        "textAlign": "center"
+      },
+      "props": {
+        "content": "<div style=\"color: #94a3b8; font-size: 14px;\"><p style=\"font-size: 24px; margin-bottom: 16px;\">💑</p><p style=\"margin: 0;\">{{data.couple.groom.name}} & {{data.couple.bride.name}}</p><p style=\"margin: 8px 0 0; opacity: 0.6;\">Wedding Invitation</p></div>"
+      }
+    }
+  ]
+}
