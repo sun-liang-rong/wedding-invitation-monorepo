@@ -1,9 +1,23 @@
-export type TemplateId = 'classic' | 'romantic' | 'elegant' | 'modern' | 'garden' | 'fairy-tale' | 'ocean' | 'autumn' | 'spring';
+export type TemplateId = 
+  | 'wedding-card'
+  | 'wedding-story'
+  | 'classic-parallax'
+  | 'wedding-h5'
+  | 'wedding-invitation'
+  | 'chinese-traditional'
+  | 'luxury-gold'
+  | 'envelope-open'
+  | 'cinematic-fade'
+  | 'floating-cards'
+  | 'fullscreen-swiper'
+  | 'interactive-map-path'
+  | 'polaroid-stack';
 
 export interface TemplateConfig {
   id: TemplateId;
   name: string;
   description: string;
+  component: string;
   previewImage: string;
   pcPreviewImage: string;
   primaryColor: string;
@@ -18,14 +32,15 @@ export interface TemplateConfig {
 
 export const TEMPLATES: TemplateConfig[] = [
   {
-    id: 'classic',
-    name: '经典雅致',
-    description: '传统红色系设计，经典大气，适合追求传统仪式感的新人',
-    previewImage: '/templates/classic-preview.jpg',
-    pcPreviewImage: '/templates/classic-pc.jpg',
+    id: 'wedding-card',
+    name: '经典卡片',
+    description: '经典卡片式设计，简洁大方，适合各类婚礼场景',
+    component: 'WeddingCard',
+    previewImage: '/templates/wedding-card-preview.jpg',
+    pcPreviewImage: '/templates/wedding-card-pc.jpg',
     primaryColor: '#f43f5e',
     secondaryColor: '#fb7185',
-    features: ['传统红色主题', '经典排版', '适合传统婚礼'],
+    features: ['卡片式布局', '简洁设计', '适合传统婚礼'],
     layout: 'single-column',
     photoRequirements: {
       cover: true,
@@ -33,44 +48,31 @@ export const TEMPLATES: TemplateConfig[] = [
     },
   },
   {
-    id: 'romantic',
-    name: '浪漫粉彩',
-    description: '柔和粉色系设计，温馨浪漫，营造甜蜜氛围',
-    previewImage: '/templates/romantic-preview.jpg',
-    pcPreviewImage: '/templates/romantic-pc.jpg',
+    id: 'wedding-story',
+    name: '爱情故事',
+    description: '讲述你们的爱情故事，记录每一个重要时刻',
+    component: 'WeddingStory',
+    previewImage: '/templates/wedding-story-preview.jpg',
+    pcPreviewImage: '/templates/wedding-story-pc.jpg',
     primaryColor: '#ec4899',
     secondaryColor: '#f472b6',
-    features: ['粉色浪漫主题', '柔和配色', '适合户外婚礼'],
+    features: ['故事叙述', '时间轴设计', '适合浪漫婚礼'],
     layout: 'single-column',
     photoRequirements: {
       cover: true,
-      gallery: 6,
+      gallery: 8,
     },
   },
   {
-    id: 'elegant',
-    name: '简约高雅',
-    description: '黑金配色设计，简约而不简单，彰显品味与格调',
-    previewImage: '/templates/elegant-preview.jpg',
-    pcPreviewImage: '/templates/elegant-pc.jpg',
-    primaryColor: '#1f2937',
-    secondaryColor: '#f59e0b',
-    features: ['黑金配色', '简约设计', '适合高端酒店婚礼'],
-    layout: 'single-column',
-    photoRequirements: {
-      cover: true,
-      gallery: 6,
-    },
-  },
-  {
-    id: 'modern',
-    name: '现代简约',
-    description: '纯白极简设计，干净利落，突显新人本身',
-    previewImage: '/templates/modern-preview.jpg',
-    pcPreviewImage: '/templates/modern-pc.jpg',
+    id: 'classic-parallax',
+    name: '视差滚动',
+    description: '现代视差滚动效果，动感十足，视觉冲击力强',
+    component: 'ClassicParallax',
+    previewImage: '/templates/classic-parallax-preview.jpg',
+    pcPreviewImage: '/templates/classic-parallax-pc.jpg',
     primaryColor: '#6366f1',
     secondaryColor: '#a5b4fc',
-    features: ['极简设计', '白色主题', '适合西式婚礼'],
+    features: ['视差效果', '动态滚动', '适合现代婚礼'],
     layout: 'single-column',
     photoRequirements: {
       cover: true,
@@ -78,29 +80,15 @@ export const TEMPLATES: TemplateConfig[] = [
     },
   },
   {
-    id: 'garden',
-    name: '花园森系',
-    description: '绿色自然系设计，清新自然，如沐春风',
-    previewImage: '/templates/garden-preview.jpg',
-    pcPreviewImage: '/templates/garden-pc.jpg',
-    primaryColor: '#10b981',
-    secondaryColor: '#34d399',
-    features: ['绿色自然主题', '清新风格', '适合草坪婚礼'],
-    layout: 'single-column',
-    photoRequirements: {
-      cover: true,
-      gallery: 6,
-    },
-  },
-  {
-    id: 'fairy-tale',
-    name: '童话梦幻',
-    description: '紫色梦幻设计，童话般的浪漫爱情故事',
-    previewImage: '/templates/fairy-tale-preview.jpg',
-    pcPreviewImage: '/templates/fairy-tale-pc.jpg',
+    id: 'wedding-h5',
+    name: 'H5动画',
+    description: '精美H5动画效果，互动性强，适合移动端分享',
+    component: 'WeddingH5',
+    previewImage: '/templates/wedding-h5-preview.jpg',
+    pcPreviewImage: '/templates/wedding-h5-pc.jpg',
     primaryColor: '#8b5cf6',
     secondaryColor: '#a78bfa',
-    features: ['紫色梦幻主题', '童话风格', '适合主题婚礼'],
+    features: ['H5动画', '移动优先', '适合社交分享'],
     layout: 'single-column',
     photoRequirements: {
       cover: true,
@@ -108,14 +96,79 @@ export const TEMPLATES: TemplateConfig[] = [
     },
   },
   {
-    id: 'ocean',
-    name: '浪漫与你',
-    description: '蓝色海洋系设计，清新浪漫，奔赴一场浪漫',
-    previewImage: '/templates/ocean-preview.jpg',
-    pcPreviewImage: '/templates/ocean-pc.jpg',
+    id: 'wedding-invitation',
+    name: '正式邀请函',
+    description: '正式邀请函样式，庄重典雅，适合正式场合',
+    component: 'WeddingInvitation',
+    previewImage: '/templates/wedding-invitation-preview.jpg',
+    pcPreviewImage: '/templates/wedding-invitation-pc.jpg',
+    primaryColor: '#1f2937',
+    secondaryColor: '#4b5563',
+    features: ['正式风格', '典雅设计', '适合酒店婚礼'],
+    layout: 'single-column',
+    photoRequirements: {
+      cover: true,
+      gallery: 6,
+    },
+  },
+  {
+    id: 'chinese-traditional',
+    name: '中式传统',
+    description: '中国传统风格，红色喜庆，传承经典文化',
+    component: 'ChineseTraditional',
+    previewImage: '/templates/chinese-traditional-preview.jpg',
+    pcPreviewImage: '/templates/chinese-traditional-pc.jpg',
+    primaryColor: '#dc2626',
+    secondaryColor: '#f87171',
+    features: ['中式风格', '传统红色', '适合中式婚礼'],
+    layout: 'single-column',
+    photoRequirements: {
+      cover: true,
+      gallery: 6,
+    },
+  },
+  {
+    id: 'luxury-gold',
+    name: '奢华金色',
+    description: '金色奢华设计，高端大气，彰显尊贵品味',
+    component: 'LuxuryGold',
+    previewImage: '/templates/luxury-gold-preview.jpg',
+    pcPreviewImage: '/templates/luxury-gold-pc.jpg',
+    primaryColor: '#f59e0b',
+    secondaryColor: '#fbbf24',
+    features: ['金色主题', '奢华设计', '适合高端婚礼'],
+    layout: 'single-column',
+    photoRequirements: {
+      cover: true,
+      gallery: 6,
+    },
+  },
+  {
+    id: 'envelope-open',
+    name: '信封开启',
+    description: '信封开启动画，创意十足，给宾客惊喜体验',
+    component: 'EnvelopeOpen',
+    previewImage: '/templates/envelope-open-preview.jpg',
+    pcPreviewImage: '/templates/envelope-open-pc.jpg',
+    primaryColor: '#ef4444',
+    secondaryColor: '#f87171',
+    features: ['开启动画', '创意设计', '适合创意婚礼'],
+    layout: 'single-column',
+    photoRequirements: {
+      cover: true,
+      gallery: 6,
+    },
+  },
+  {
+    id: 'cinematic-fade',
+    name: '电影渐变',
+    description: '电影级渐变效果，艺术感强，如同电影大片',
+    component: 'CinematicFade',
+    previewImage: '/templates/cinematic-fade-preview.jpg',
+    pcPreviewImage: '/templates/cinematic-fade-pc.jpg',
     primaryColor: '#0ea5e9',
     secondaryColor: '#38bdf8',
-    features: ['蓝色海洋主题', '清新浪漫', '适合海边婚礼'],
+    features: ['电影效果', '渐变动画', '适合艺术婚礼'],
     layout: 'single-column',
     photoRequirements: {
       cover: true,
@@ -123,14 +176,15 @@ export const TEMPLATES: TemplateConfig[] = [
     },
   },
   {
-    id: 'autumn',
-    name: '秋日拿铁',
-    description: '暖色调拿铁设计，温暖温柔，秋冬婚礼首选',
-    previewImage: '/templates/autumn-preview.jpg',
-    pcPreviewImage: '/templates/autumn-pc.jpg',
-    primaryColor: '#d97706',
-    secondaryColor: '#fbbf24',
-    features: ['暖色调', '拿铁风格', '适合秋冬婚礼'],
+    id: 'floating-cards',
+    name: '浮动卡片',
+    description: '卡片浮动效果，轻盈灵动，现代感十足',
+    component: 'FloatingCards',
+    previewImage: '/templates/floating-cards-preview.jpg',
+    pcPreviewImage: '/templates/floating-cards-pc.jpg',
+    primaryColor: '#a855f7',
+    secondaryColor: '#c084fc',
+    features: ['浮动效果', '卡片设计', '适合现代婚礼'],
     layout: 'single-column',
     photoRequirements: {
       cover: true,
@@ -138,18 +192,51 @@ export const TEMPLATES: TemplateConfig[] = [
     },
   },
   {
-    id: 'spring',
-    name: '沐浴阳光',
-    description: '阳光活力系设计，明媚温暖，充满希望',
-    previewImage: '/templates/spring-preview.jpg',
-    pcPreviewImage: '/templates/spring-pc.jpg',
-    primaryColor: '#fbbf24',
-    secondaryColor: '#fcd34d',
-    features: ['阳光活力', '温暖明媚', '适合春季婚礼'],
+    id: 'fullscreen-swiper',
+    name: '全屏滑动',
+    description: '全屏滑动切换，沉浸式体验，视觉震撼',
+    component: 'FullScreenSwiper',
+    previewImage: '/templates/fullscreen-swiper-preview.jpg',
+    pcPreviewImage: '/templates/fullscreen-swiper-pc.jpg',
+    primaryColor: '#10b981',
+    secondaryColor: '#34d399',
+    features: ['全屏滑动', '沉浸体验', '适合户外婚礼'],
+    layout: 'single-column',
+    photoRequirements: {
+      cover: true,
+      gallery: 8,
+    },
+  },
+  {
+    id: 'interactive-map-path',
+    name: '互动地图',
+    description: '互动地图路径，展示婚礼地点，方便宾客导航',
+    component: 'InteractiveMapPath',
+    previewImage: '/templates/interactive-map-path-preview.jpg',
+    pcPreviewImage: '/templates/interactive-map-path-pc.jpg',
+    primaryColor: '#f43f5e',
+    secondaryColor: '#fb7185',
+    features: ['地图导航', '互动设计', '适合各类婚礼'],
     layout: 'single-column',
     photoRequirements: {
       cover: true,
       gallery: 6,
+    },
+  },
+  {
+    id: 'polaroid-stack',
+    name: '拍立得堆叠',
+    description: '拍立得照片堆叠效果，复古文艺，充满回忆感',
+    component: 'PolaroidStack',
+    previewImage: '/templates/polaroid-stack-preview.jpg',
+    pcPreviewImage: '/templates/polaroid-stack-pc.jpg',
+    primaryColor: '#78716c',
+    secondaryColor: '#a8a29e',
+    features: ['拍立得风格', '复古设计', '适合文艺婚礼'],
+    layout: 'single-column',
+    photoRequirements: {
+      cover: true,
+      gallery: 8,
     },
   },
 ];
